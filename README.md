@@ -1,4 +1,4 @@
-# ECT
+# ECTAD
 
 [Performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax.
 
