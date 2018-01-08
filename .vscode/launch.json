@@ -1,7 +1,7 @@
 {
     // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
     // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
-    // Для получения дополнительной информации посетите: https://go.microstest.ok(ectad.options, "Created successfully");oft.com/fwlink/?linkid=830387
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
 
@@ -24,7 +24,10 @@
             "request": "launch",
             "name": "express example",
             "program": "${workspaceFolder}/examples/express.js",
-            "args": []
+            "args": [],
+            "env": {
+                "DEBUG":"*"
+            }
         },
         {
             "type": "node",
