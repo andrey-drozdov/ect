@@ -1,1 +1,1 @@
-module.exports = require('./lib/ect');
+module.exports = require('./lib/ectad');

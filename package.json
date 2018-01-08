@@ -1,21 +1,28 @@
 {
-	"name" : "ect",
-	"version" : "0.5.9",
-	"description" : "CoffeeScript template engine",
-	"homepage" : "http://ectjs.com",
-	"keywords" : [ "template", "coffeescript" ],
-	"author" : "Vadim M. Baryshev <vadimbaryshev@gmail.com>",
-	"bin" : {
-		"ect" : "./bin/ect"
+	"name": "ectad",
+	"version": "1.1.0",
+	"description": "CoffeeScript template engine. Modified by Andrey Drozdov.",
+	"homepage": "http://ectjs.com",
+	"keywords": [
+		"template",
+		"coffeescript"
+	],
+	"author": "Vadim M. Baryshev <vadimbaryshev@gmail.com>",
+	"bin": {
+		"ect": "./bin/ect"
 	},
-	"main" : "./index",
-	"repository" : {
-		"type" : "git",
-		"url" : "git://github.com/baryshev/ect.git"
+	"main": "./index",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/andrey-drozdov/ectad.git"
 	},
-	"dependencies" : {
-		"coffee-script" : ">= 1.5.0",
-		"optimist" : "0.4.0"
+	"dependencies": {
+		"coffee-script": "*",
+		"connect": "*",
+		"express": "^4.16.2",
+		"optimist": "*"
 	},
-	"engines" : { "node" : ">= 0.4.0" }
+	"engines": {
+		"node": ">= 0.4.0"
+	}
 }

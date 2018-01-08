@@ -1,0 +1,36 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microstest.ok(ectad.options, "Created successfully");oft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "unit test basic",
+            "program": "/usr/local/bin/nodeunit",
+            "args": ["${workspaceFolder}/test/basic.js"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "server example",
+            "program": "${workspaceFolder}/examples/compiler.js",
+            "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "express example",
+            "program": "${workspaceFolder}/examples/express.js",
+            "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "module",
+            "program": "${workspaceFolder}/index"
+        }
+    ]
+}
