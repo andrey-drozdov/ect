@@ -1,12 +1,12 @@
 # ECTAD
 
-[Performance focused](http://ectjs.com/#benchmark) JavaScript template engine with embedded CoffeeScript syntax.
+JavaScript template engine with embedded CoffeeScript syntax.
 
 [Just try demo](http://ectjs.com) to check all features.
 
 ## Installation
 
-	npm install ect
+	npm install ectad --save
 
 ## Features
 
@@ -27,18 +27,18 @@
 ## Usage
 
 ```js
-var ECT = require('ect');
+var EctAd = require('ectad');
 
-var renderer = ECT({ root : __dirname + '/views', ext : '.ect' });
+var renderer = new EctAd({ root : __dirname + '/views', ext : '.html' });
 var html = renderer.render('page', { title: 'Hello, World!' });
 ```
 
 or
 
 ```js
-var ECT = require('ect');
+var EctAd = require('ectad');
 
-var renderer = ECT({ root : __dirname + '/views', ext : '.ect' });
+var renderer = EctAd({ root : __dirname + '/views', ext : '.html' });
 
 renderer.render('page', { title: 'Hello, World!' }, function (error, html) {
 	console.log(error);
@@ -49,9 +49,9 @@ renderer.render('page', { title: 'Hello, World!' }, function (error, html) {
 You may use JavaScript object as root.
 
 ```js
-var ECT = require('ect');
+var EctAd = require('ectad');
 
-var renderer = ECT({ root : {
+var renderer = new EctAd({ root : {
 				layout: '<html><head><title><%- @title %></title></head><body><% content %></body></html>',
 				page: '<% extend "layout" %><p>Page content</p>'
 				}
@@ -66,11 +66,11 @@ app.js
 ```js
 var express = require('express');
 var app = express();
-var ECT = require('ect');
-var ectRenderer = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
+var ECT = require('ectad');
+var ectRenderer = new EctAd({ watch: true, root: __dirname + '/views', ext : '.html' });
 
-app.set('view engine', 'ect');
-app.engine('ect', ectRenderer.render);
+app.set('view engine', 'html');
+app.engine('html', ectRenderer.render);
 
 app.get('/', function (req, res){
 	res.render('index');
@@ -80,19 +80,19 @@ app.listen(3000);
 console.log('Listening on port 3000');
 ```
 
-views/index.ect
+views/index.html
 ```html
 <% extend 'layout' %>
 <% include 'extra' %>
 <div>Hello, World!</div>
 ```
 
-views/extra.ect
+views/extra.html
 ```html
 <div>Include me!</div>
 ```
 
-views/layout.ect
+views/layout.html
 ```html
 <html>
 	<body>
@@ -197,6 +197,8 @@ Blocks supports more than one level of inheritance and may be redefined.
 
 ## Client-side support
 
+NOT TESTED YET! PROBABLY BROKEN.
+
 Download and include [coffee-script.js](https://github.com/jashkenas/coffee-script/blob/master/extras/coffee-script.js) and [ect.min.js](https://github.com/baryshev/ect/tree/master/ect.min.js).
 
 ```html
@@ -240,7 +242,7 @@ app.listen(3000);
 Use it.
 
 ```js
-var renderer = ECT({ root : '/views', ext : '.ect' });
+var renderer = new EctAd({ root : '/views', ext : '.ect' });
 var data = { title : 'Hello, World!' };
 var html = renderer.render('template', data);
 ```
@@ -251,6 +253,7 @@ Note: root folder must be on the same domain to avoid cross-domain restrictions.
 
 (The MIT License)
 
+Copyright (c) 2017 Andrey Drozdov &lt;andrey@adrozdov.com&gt;
 Copyright (c) 2012 Vadim M. Baryshev &lt;vadimbaryshev@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
